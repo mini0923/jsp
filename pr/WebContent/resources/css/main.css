@@ -1,0 +1,36 @@
+.image{
+   width:306px;
+   height:306px;
+}
+.tbox{
+    width: 306px; 
+    height: 208px; 
+    border: 5px solid #000; 
+    text-align: center; 
+    padding: 15px 0px; 
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+ .tbox>p{
+    font-size: 18px;
+    font-weight: bold;
+}
+.tbox>h1{
+    margin: 15px 0px;
+}
+
+.image1{
+   width:416px;
+   height:350px;
+   margin:24px 0px 24px 0px;
+}
+.image2{
+   width:416px;
+   height:350px;
+   margin:24px 0px 24px 0px;
+}
+.image3{
+   width:416px;
+   height:350px;
+   margin:24px 0px 24px 0px;
+}

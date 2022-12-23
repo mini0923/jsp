@@ -1,0 +1,33 @@
+header {
+	border-bottom: 1px solid gray;
+}
+
+header a, nav a {
+	text-decoration: none;
+}
+
+.top {
+  --offset: 50px; 
+  
+  position: sticky;
+  bottom: 20px;      
+  margin-right:10px; 
+  place-self: end;
+  margin-top: calc(100vh + var(--offset));
+  
+  /* visual styling */
+  text-decoration: none;
+  padding: 10px;
+  font-family: sans-serif;
+  color: #fff;
+  background: #000;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.search {
+	margin-left: 6px;
+}
+.container{
+   font-family: 'Hahmlet', serif;
+}

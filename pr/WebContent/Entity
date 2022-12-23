@@ -1,0 +1,76 @@
+create table user(
+userName varchar(20) Not Null,
+userDate date Not Null,
+userID varchar(20) primary key,
+userPassword varchar(30) Not Null,
+userEmail varchar(30) Not Null);
+
+
+create table board(
+boardID int,
+boardTitle varchar(20) Not Null,
+userID varchar(20), 
+boardDate datetime,
+boardContent varchar(2048) Not Null,
+boardCount int,
+boardAvailable int,
+primary key(boardID, boardCount),
+foreign key(userID) references user(userID) on delete cascade);
+
+create table comment(
+commentContent varchar(200) Not Null,
+commentID int primary key,
+userID varchar(20),
+commentAvailable int,
+commentDate varchar(50),
+boardID int,
+foreign key(boardID) references board(boardID) on delete cascade,
+foreign key(userID) references user(userID) on delete cascade);
+
+create table likelist(
+boardID int,
+userID varchar(20),
+foreign key(boardID) references board(boardID) on delete cascade);
+
+create table boardImage(
+	boardID int,
+	biname varchar(200),
+	bipath varchar(200),
+	foreign key(boardID) references board(boardID) on delete cascade);
+
+---------------------------------------------------------------------------------
+
+create table tasty(
+	tastyID int,
+	tastyTitle varchar(200),
+	tastyDate datetime, 
+	tastyLocation varchar(200), 
+	tastyCategory varchar(20),
+	userID varchar(20),
+	tastyTel varchar(200), 
+	tastyContent varchar(2048),
+	tastyCount int,
+	tastyLikeCount int,
+	tastyAvailable int,
+	primary key(tastyID, tastyLikeCount, tastyCount));
+	
+create table tastyLike(
+	tastyID int,
+	userID varchar(20),
+	foreign key(tastyID) references Tasty(tastyID) on delete cascade);
+	
+	create table tastyUpload(
+    tastyID int ,
+    tuname varchar(200),
+    tuname1 varchar(200),
+    tuname2 varchar(200),
+    tupath varchar(200),
+    tupath1 varchar(200),
+    tupath2 varchar(200),
+    foreign key(tastyID) references tasty(tastyID) on delete cascade);
+    
+create table tastyImage(
+	tastyID int,
+	tiname varchar(200),
+	tipath varchar(200),
+	foreign key(tastyID) references tasty(tastyID) on delete cascade);
